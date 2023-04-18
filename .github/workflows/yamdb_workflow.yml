@@ -56,7 +56,7 @@ jobs:
         with:
           context: ./infra
           push: true
-          file: docker-compose.yaml
+          file: ./infra/docker-compose.yaml
           tags: ${{ secrets.DOCKER_USERNAME }}/yamdb_ci_docker:latest
 
   deploy:
