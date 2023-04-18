@@ -70,9 +70,6 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
-          script: |
-            sudo docker-compose stop
-            sudo docker-compose rm web
 
   send_message:
     runs-on: ubuntu-latest
