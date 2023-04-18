@@ -71,10 +71,10 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
-            sudo docker-compose stop
+            sudo docker compose stop
             sudo docker system prune -f
             sudo docker image rm ${{ secrets.DOCKER_USERNAME }}/yamdb_ci_docker
-            sudo docker-compose pull ${{ secrets.DOCKER_USERNAME }}/yamdb_ci_docker:latest
+            sudo docker compose pull ${{ secrets.DOCKER_USERNAME }}/yamdb_ci_docker:latest
             touch .env
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
             echo DB_NAME=${{ secrets.DB_NAME }} >> .env
