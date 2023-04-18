@@ -56,8 +56,7 @@ build_and_push_to_docker_hub:
           context: ./infra
           push: true
           file: docker-compose.yml
-          tags: |
-            ${{ secrets.DOCKER_USERNAME }}/yamdb_ci_docker:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/yamdb_ci_docker:latest
 
 deploy:
     runs-on: ubuntu-latest
