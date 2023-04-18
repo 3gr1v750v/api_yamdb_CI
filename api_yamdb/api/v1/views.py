@@ -11,22 +11,12 @@ from reviews.models import Category, Genre, Review, Title
 from users.models import User
 
 from .filters import TitleFilter
-from .permissions import (
-    IsAdminOnly,
-    IsAdminOrReadOnly,
-    IsOwnerModeratorAdminOrReadOnly,
-    IsProfileOwner,
-)
-from .serializers import (
-    CategorySerializer,
-    CommentSerializer,
-    ConfirmationCodeSerializer,
-    GenreSerializer,
-    ReviewSerializer,
-    TitleCreateUpdateSerializer,
-    TitleViewSerializer,
-    UserSerializer,
-)
+from .permissions import (IsAdminOnly, IsAdminOrReadOnly,
+                          IsOwnerModeratorAdminOrReadOnly, IsProfileOwner)
+from .serializers import (CategorySerializer, CommentSerializer,
+                          ConfirmationCodeSerializer, GenreSerializer,
+                          ReviewSerializer, TitleCreateUpdateSerializer,
+                          TitleViewSerializer, UserSerializer)
 from .utils import code_generator, confirmation_code_email
 
 
