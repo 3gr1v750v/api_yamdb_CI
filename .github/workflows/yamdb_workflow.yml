@@ -53,15 +53,10 @@ jobs:
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
-        with:
-          context: .
-          push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/yamdb_ci_docker:latest
-        env:
-          DOCKER_BUILDKIT: 1
-          DOCKER_BUILD_ARGS: |
-            --file infra/docker-compose.yml
-            --build-arg APP_DIR=api_yamdb
+          with:
+            context: ./api_yamdb
+            push: true
+            tags: ${{ secrets.DOCKER_USERNAME }}/yamdb_ci_docker:latest
 
   deploy:
     runs-on: ubuntu-latest
