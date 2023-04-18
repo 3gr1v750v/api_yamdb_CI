@@ -72,7 +72,7 @@ jobs:
             script: |
               sudo docker compose stop
               sudo docker image rm ${{ secrets.DOCKER_USERNAME }}/yamdb_ci_docker
-              sudo docker-compose pull ${{ secrets.DOCKER_USERNAME }}/yamdb_ci_docker:latest
+              sudo docker compose pull ${{ secrets.DOCKER_USERNAME }}/yamdb_ci_docker:latest
               rm .env
               touch .env
               echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
