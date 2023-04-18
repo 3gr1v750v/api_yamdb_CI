@@ -1,6 +1,8 @@
 name: Yamdb workflow
 
-on: [push]
+on:
+  push:
+    branches: [ main ]
 
 jobs:
   tests:
@@ -27,5 +29,5 @@ jobs:
     - name: Copy workflow file (required by tests)
       run: cp .github/workflows/yamdb_workflow.yml yamdb_workflow.yml
 
-    - name: Test with pytest
+    - name: Test with Pytest
       run: pytest
