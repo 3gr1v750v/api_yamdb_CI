@@ -144,75 +144,20 @@ DB_HOST = <data base host> eg: db
 DB_PORT = <database port> eg: 5432
 ```
 
+### Github Actins CI:
 ![workflow bagde](https://github.com/EugeniGrivtsov/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
-### Подготовка для запуска проекта на VM:
-- Для развёртывания проекта необходимо скачать его в нужную вам директорию, например:
+Запуск workflow осуществляется тригером 'push' в 'master'
+- Проверка lint по PEP8
+- Запуск текстов
+- Создание образа докера (Image) для ./api_yamdb
+- Сохраниение образа докера (Image) в репозитории docker hub
+- Подключение к серверу (вирьуальная машина на ubuntu 22.04)
+- Остановка работы текущих контейнеров на сервере, очищение временных образов
+- Загрузка нового образа на сервер из репозитория docker hub
+- Настройка .env файла на сервере
+- Разворачивание контейнеров на сервере
+- Осуществление миграций и сбора статики
 
-``` git clone git@github.com:EugeniGrivtsov/api_yamdb_docker.git ```
-
-- В директории infra создайте файл .env, откройте его и настройте параметры переменных окружения по заданному шаблону:
-
-``` cp .env.example .env ```
-
-
-- Из папки ``` infra/ ``` разверните контейнеры в новой структуре:
-
-- Для запуска необходимо выполнить из директории с проектом команду:
-
-``` docker-compose up -d ```
-
-_Для пересборки команда up выполняется с параметром --build_
-
-``` docker-compose up -d --build ```
-
-- Теперь в контейнере web нужно выполнить миграции:
-
-``` docker-compose exec web python manage.py migrate ```
-
-- Создать суперпользователя:
-
-``` docker-compose exec web python manage.py createsuperuser ```
-
-- Собрать статику:
-
-``` docker-compose exec web python manage.py collectstatic --no-input ```
-
-- Проект готов к работе и доступен по адресу:
-
-_Раздел администрирования_
-``` http://localhost/admin/ ```
-
-_Адрес доступа API проекта_
-``` http://localhost/api/v1/ ```
-
-### Бекап и миграция базы данных
-
-- Вы также можете создать дамп (резервную копию) базы:
-
-``` docker-compose exec web python manage.py dumpdata > fixtures.json ```
-
-- Чтобы скопировать файл базы данных в контейнер выполните команду из директории папки ``` infra/ ```:
-
-``` docker cp fixtures.json <id>:app/ ```
-
-- Выполните миграцию базы данных из директории папки ``` infra/ ```:
-
-``` docker-compose exec web python manage.py loaddata fixtures.json ```
-
-
-## Авторы
+## Автор
 **Гривцов Евгений** - [https://github.com/EugeniGrivtsov](https://github.com/EugeniGrivtsov)
-
-*Задачи проекта*: Система регистрации и аутентификации; права доступа; работа с токеном; система подтверждения через e-mail.
-
-----
-**Пак Владислав** - [https://github.com/PakVla](https://github.com/PakVla)
-
-*Задачи проекта*: Модели, view и эндпойнты для произведений, категорий и жанров. Реализация импорта данных из csv файлов.
-
-
-----
-**Харитонов Тихон** - [https://github.com/TiEnddd](https://github.com/TiEnddd)
-
-*Задачи проекта*: Модели, view и эндпойнты для отзывов, комментариев. Получение рейтинга произведений.
