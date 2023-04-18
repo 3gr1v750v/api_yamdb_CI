@@ -144,7 +144,7 @@ DB_HOST = <data base host> eg: db
 DB_PORT = <database port> eg: 5432
 ```
 
-### Github Actins CI:
+### Github Actions CI:
 ![workflow bagde](https://github.com/EugeniGrivtsov/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 Запуск workflow осуществляется тригером 'push' в 'master'
