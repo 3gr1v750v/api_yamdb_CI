@@ -1,7 +1,7 @@
 # yamdb_final
 yamdb_final
 
-![workflow bagde](https://github.com/EugeniGrivtsov/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+
 
 # Проект YaMDb (Docker + CI)
 
@@ -10,6 +10,7 @@ yamdb_final
 Проект создан в рамках учебного курса Яндекс.Практикум.
 
 Версия проекта без Docker контейнера: https://github.com/EugeniGrivtsov/api_yamdb
+
 Версия проекта, с разворачивание через Docker-compose контейнеры: https://github.com/EugeniGrivtsov/api_yamdb_docker
 
 Проект YaMDb собирает отзывы пользователей на произведения. Сами произведения
@@ -147,6 +148,8 @@ POSTGRES_PASSWORD = <password>
 DB_HOST = <data base host> eg: db
 DB_PORT = <database port> eg: 5432
 ```
+
+![workflow bagde](https://github.com/EugeniGrivtsov/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 ### Подготовка для запуска проекта на VM:
 - Для развёртывания проекта необходимо скачать его в нужную вам директорию, например:
