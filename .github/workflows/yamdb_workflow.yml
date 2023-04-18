@@ -71,7 +71,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
-            sudo docker compose stop
+            sudo docker-compose stop
 
   send_message:
     runs-on: ubuntu-latest
