@@ -24,8 +24,8 @@ jobs:
     - name: Lint with flake8
       run: python -m flake8
 
-    - name: Copy yamdb_workflow.yml (required by tests)
-      run: cp .github/workflows/yamdb_workflow.yml api_yamdb/
+    - name: Copy workflow file (required by tests)
+      run: cp .github/workflows/yamdb_workflow.yml yamdb_workflow.yml
 
     - name: Test with pytest
       run: pytest
