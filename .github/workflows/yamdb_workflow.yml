@@ -72,10 +72,11 @@ jobs:
             script: |
               sudo docker compose stop
               sudo docker system prune -f
-              sudo docker image rm ${{ secrets.DOCKER_USERNAME }}/api_yamdb
+              sudo docker image rm ${{ secrets.DOCKER_USERNAME }}/api_yamdb:latest
               sudo docker compose pull ${{ secrets.DOCKER_USERNAME }}/api_yamdb:latest
               rm .env
               touch .env
+              echo SECRET_KEY=${{ secrets.SECRET_KEY }} >> .env
               echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
               echo DB_NAME=${{ secrets.DB_NAME }} >> .env
               echo POSTGRES_USER=${{ secrets.POSTGRES_USER }} >> .env
