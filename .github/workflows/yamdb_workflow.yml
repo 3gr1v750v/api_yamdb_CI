@@ -56,7 +56,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ env.DOCKERHUB_USERNAME }}/yamdb_ci_docker:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/yamdb_ci_docker:latest
         env:
           DOCKER_BUILDKIT: 1
           DOCKER_BUILD_ARGS: |
