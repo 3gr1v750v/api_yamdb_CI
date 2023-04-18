@@ -24,5 +24,8 @@ jobs:
     - name: Test with flake8
       run: python -m flake8
 
+    - name: Copy yamdb_workflow.yml (required by tests)
+      run: cp .github/workflow/yamdb_workflow.yml api_yamdb/
+
     - name: Test with pytest
       run: pytest
