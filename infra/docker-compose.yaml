@@ -15,7 +15,7 @@ services:
       - ./.env
 
   web:
-    image: egrivtsov/api_yamdb:latest
+    image: "${DOCKER_USERNAME}/api_yamdb:latest"
     restart: always
     volumes:
       - static_value:/app/static/
