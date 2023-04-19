@@ -6,9 +6,11 @@
 
 Проект создан в рамках учебного курса Яндекс.Практикум.
 
-- Версия проекта без Docker контейнера: https://github.com/EugeniGrivtsov/api_yamdb
+- Версия проекта без Docker контейнера: 
+https://github.com/EugeniGrivtsov/api_yamdb
 
-- Версия проекта, с разворачивание через Docker-compose контейнеры: https://github.com/EugeniGrivtsov/api_yamdb_docker
+- Версия проекта, с разворачивание через Docker-compose контейнеры
+https://github.com/EugeniGrivtsov/api_yamdb_docker
 
 Проект YaMDb собирает отзывы пользователей на произведения. Сами произведения
 в YaMDb не хранятся, здесь нельзя посмотреть фильм или послушать музыку.
@@ -124,6 +126,10 @@ POST /api/v1/titles/{title_id}/reviews/{review_id}/comments/
 - Скопируйте файлы docker-compose.yaml и nginx/default.conf из вашего проекта на сервер в home/<ваш_username>/docker-compose.yaml и home/<ваш_username>/nginx/default.conf соответственно. Если вы копируете файлы этого проекта, не забудьте поменять конфигурацию параметра 'image' в docker-compose.yaml.
 
 ```scp my_file username@host:<путь-на-сервере>```
+
+- Укажите публичный адрес вашего сервера в nginx/default.conf
+
+```server_name <ip вашего сервера>;```
 
 ### Подготовка "Actions secrets and variables":
 - В разделе 'Settings' вашего репозитория, пройдите в раздел 'Secrets and Variables' - 'Actions' и создайте следующие 'repository secrets'

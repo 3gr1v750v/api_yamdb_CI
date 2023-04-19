@@ -24,6 +24,7 @@ services:
       - db
     env_file:
       - ./.env
+    command: python manage.py collectstatic --noinput
 
   nginx:
     image: nginx:1.21.3-alpine
