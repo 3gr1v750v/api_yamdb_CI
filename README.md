@@ -155,6 +155,7 @@ DB_PORT = <database port> eg: 5432
 ### Проверка работы сервера:
 - http://158.160.35.211/admin/
 - http://158.160.35.211/redoc/
+- http://158.160.35.211/api/v1/
 
 ### Github Actions CI:
 
