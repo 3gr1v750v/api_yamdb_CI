@@ -3,6 +3,7 @@ name: Yamdb workflow
 on:
   push:
     branches:
+      - master
       - '*'
 
 jobs:
