@@ -146,6 +146,10 @@ DB_HOST = <data base host> eg: db
 DB_PORT = <database port> eg: 5432
 ```
 
+### Проверка работы сервера:
+- http://158.160.35.211/admin/
+- http://158.160.35.211/redoc/
+
 ### Github Actions CI:
 
 Запуск workflow осуществляется тригером 'push' в 'master'
