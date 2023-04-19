@@ -1,5 +1,7 @@
 # Проект YaMDb (Docker + CI)
 
+![workflow bagde](https://github.com/EugeniGrivtsov/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+
 ## Описание
 
 Проект создан в рамках учебного курса Яндекс.Практикум.
@@ -145,7 +147,6 @@ DB_PORT = <database port> eg: 5432
 ```
 
 ### Github Actions CI:
-![workflow bagde](https://github.com/EugeniGrivtsov/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 Запуск workflow осуществляется тригером 'push' в 'master'
 - Проверка lint по PEP8
@@ -158,7 +159,7 @@ DB_PORT = <database port> eg: 5432
 - Настройка .env файла на сервере
 - Разворачивание контейнеров на сервере
 - Осуществление миграций и сбора статики
-- Оповещение об успешном завешении workflow через Telegram бота
+- Оповещение об успешном завершении workflow через Telegram бота
 
 ## Автор
 **Гривцов Евгений** - [https://github.com/EugeniGrivtsov](https://github.com/EugeniGrivtsov)
