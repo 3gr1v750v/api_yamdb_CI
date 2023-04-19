@@ -6,11 +6,9 @@
 
 Проект создан в рамках учебного курса Яндекс.Практикум.
 
-- Версия проекта без Docker контейнера: 
-https://github.com/EugeniGrivtsov/api_yamdb
+- Версия проекта без Docker контейнера: https://github.com/EugeniGrivtsov/api_yamdb
 
-- Версия проекта, с разворачивание через Docker-compose контейнеры
-https://github.com/EugeniGrivtsov/api_yamdb_docker
+- Версия проекта, с разворачивание через Docker-compose контейнеры: https://github.com/EugeniGrivtsov/api_yamdb_docker
 
 Проект YaMDb собирает отзывы пользователей на произведения. Сами произведения
 в YaMDb не хранятся, здесь нельзя посмотреть фильм или послушать музыку.
