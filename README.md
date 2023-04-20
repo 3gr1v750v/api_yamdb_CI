@@ -159,7 +159,7 @@ DB_PORT = <database port> eg: 5432
 
 ### Github Actions CI:
 
-Запуск workflow осуществляется тригером 'push' в 'master'
+Запуск workflow осуществляется тригером 'push' в любую ветку репозитория:
 - Проверка lint по PEP8
 - Запуск текстов
 - Создание образа докера (Image) для ./api_yamdb
