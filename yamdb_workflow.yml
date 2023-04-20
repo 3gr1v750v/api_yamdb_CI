@@ -1,9 +1,6 @@
 name: Yamdb workflow
 
-on:
-  push:
-    branches:
-      - master
+on: [push]
 
 jobs:
   tests:
@@ -37,6 +34,7 @@ jobs:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     needs: tests
+    if: github.ref == 'refs/heads/master'
 
     steps:
       - name: Check out the repo
@@ -61,6 +59,7 @@ jobs:
   deploy:
       runs-on: ubuntu-latest
       needs: build_and_push_to_docker_hub
+
       steps:
         - name: executing remote ssh commands to deploy
           uses: appleboy/ssh-action@master
@@ -72,7 +71,7 @@ jobs:
             script: |
               sudo docker compose stop
               sudo docker system prune -f
-              sudo docker rmi ${{ secrets.DOCKER_USERNAME }}/api_yamdb:latest
+              sudo docker compose rm web
               sudo docker pull ${{ secrets.DOCKER_USERNAME }}/api_yamdb:latest
               rm .env
               touch .env
@@ -84,12 +83,11 @@ jobs:
               echo DB_HOST=${{ secrets.DB_HOST }} >> .env
               echo DB_PORT=${{ secrets.DB_PORT }} >> .env
               sudo docker compose up -d 
-              sudo docker compose exec web python manage.py migrate
-              sudo docker compose exec web python manage.py collectstatic --noinput
 
   send_message:
     runs-on: ubuntu-latest
     needs: deploy
+
     steps:
       - name: send message
         uses: appleboy/telegram-action@master
