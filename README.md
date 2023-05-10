@@ -1,13 +1,13 @@
 # Проект YaMDb (Docker + CI)
 
-![workflow bagde](https://github.com/EugeniGrivtsov/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+![workflow bagde](https://github.com/3gr1v750v/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 ## Описание
 
 Проект создан в рамках учебного курса Яндекс.Практикум.
 
-- Версия проекта без Docker контейнера: https://github.com/EugeniGrivtsov/api_yamdb
-- Версия проекта, с разворачивание через Docker-compose контейнеры: https://github.com/EugeniGrivtsov/api_yamdb_docker
+- Версия проекта без Docker контейнера: https://github.com/3gr1v750v/api_yamdb
+- Версия проекта, с разворачивание через Docker-compose контейнеры: https://github.com/3gr1v750v/api_yamdb_docker
 
 Проект YaMDb собирает отзывы пользователей на произведения. Сами произведения
 в YaMDb не хранятся, здесь нельзя посмотреть фильм или послушать музыку.
@@ -169,6 +169,3 @@ DB_PORT = <database port> eg: 5432
 - Настройка .env файла на сервере
 - Разворачивание контейнеров на сервере
 - Оповещение об успешном завершении workflow через Telegram бота
-
-## Автор
-**Гривцов Евгений** - [https://github.com/EugeniGrivtsov](https://github.com/EugeniGrivtsov)
