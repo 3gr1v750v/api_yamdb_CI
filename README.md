@@ -1,6 +1,6 @@
 # Проект YaMDb (Docker + CI)
 
-![workflow bagde](https://github.com/3gr1v750v/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+![workflow bagde](https://github.com/3gr1v750v/api_yamdb_CI/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 ## Описание
 
